@@ -1,5 +1,5 @@
-import SideBar from "./componetns/TheSideBar"
-import MainContent from "./componetns/MainContent"
+import SideBar from "./components/sidebar/TheSideBar"
+import MainContent from "./components/main/MainContent"
 import { useEffect, useState } from "react"
 import axios from "axios"
 function App() {

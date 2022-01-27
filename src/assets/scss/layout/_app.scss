@@ -1,0 +1,13 @@
+@use "../utils/mixins";
+
+.app {
+    @include mixins.grid(1fr 3fr, 1fr);
+    width: 100%;
+    height: 100vh;
+}
+
+@media screen and (max-width: 620px) {
+    .app {
+        @include mixins.grid(1fr, auto auto);
+    }
+}

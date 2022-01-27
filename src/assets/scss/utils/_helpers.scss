@@ -1,0 +1,24 @@
+@use "./variables";
+
+.item-border {
+    border-bottom: 2px solid black;
+}
+.item-rounded {
+    border-radius: 8px;
+    background: black;
+    color: variables.$white;
+    padding: 0.25em 0.3em;
+}
+.text-secondary {
+    color: variables.$secondary;
+}
+.text-secondary {
+    color: variables.$secondary;
+}
+.title--medium {
+    font-size: 1rem;
+    color: darken($color: variables.$light, $amount: 20);
+}
+.text--big {
+    font-size: 2rem;
+}

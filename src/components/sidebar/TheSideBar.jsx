@@ -9,13 +9,13 @@ function SideBar(props) {
     <aside className="sidebar">
       <div className="sidebar-header">
         <form method="post" className="sidebar-form">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <input type="text" placeholder="Search for places..." className="sidebar-form__input" />
         </form>
       </div>
       <div className="sidebar-body">
         <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', gridTemplateRows: '1fr', alignItems: 'center' }}>
-          <img src="https://cdn.weatherapi.com/weather/64x64/day/112.png" className="sidebar-body__icon" />
+          <img src="https://cdn.weatherapi.com/weather/128x128/night/143.png" className="sidebar-body__icon" />
           <p className="sidebar-body__title"><span>12</span><sup>°C</sup></p>
         </div>
         <p className="sidebar-body__text">Sunny</p>
