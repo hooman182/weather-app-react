@@ -1,10 +1,9 @@
 import SideBar from "./components/sidebar/TheSideBar"
 import MainContent from "./components/main/MainContent"
 import { useEffect, useState } from "react"
-import axios from "axios"
 function App() {
-  const [location, setLocation] = useState({})
-  const [weather, setWeather] = useState({})
+  // const [location, setLocation] = useState({})
+  // const [weather, setWeather] = useState({})
 
   useEffect(() => {
 
