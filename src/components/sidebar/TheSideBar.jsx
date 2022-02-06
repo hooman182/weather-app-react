@@ -9,7 +9,7 @@ function SideBar() {
   return (
     <aside className="sidebar">
       <SidebarHeader />
-      {store == "" && <Spinner />}
+      {store.length === 0 && <Spinner />}
       {store.current && <SidebarBody data={store.current} />}
       {store.location && <SidebarFooter data={store.location} />}
     </aside>

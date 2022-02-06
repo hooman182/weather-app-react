@@ -8,14 +8,14 @@ function MainContent() {
     return (
         <main className="main">
             {
-                store == ""
+                store.length === 0
                     ?
                     <Spinner />
                     :
                     <MainHeader data={store.forecast} />
             }
             {
-                store == ""
+                store.length === 0
                     ?
                     <Spinner />
                     :
