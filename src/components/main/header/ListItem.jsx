@@ -36,7 +36,7 @@ function ListContainer(props) {
             {hour.map((item, index) =>
                 <div className="main-header__content-list__item" key={index}>
                     <p className="main-header__content-list__item__title">{item.time.slice(-5)}</p>
-                    <img src={item.condition.icon} alt="" />
+                    <img src={item.condition.icon} alt={item.condition.text} />
                     <p className="text--secondary">{item.temp_c}°</p>
                 </div>
             )}

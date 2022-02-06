@@ -10,7 +10,7 @@ async function ipApi() {
     }
 }
 
-async function weatherApi(value) {
+async function weatherApi(value = "london") {
     try {
         const { data } = await axios
             .get(`https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_Weather_API_KEY}&q=${value}&days=7&aqi=no&alerts=no`)

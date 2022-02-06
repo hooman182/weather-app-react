@@ -8,7 +8,7 @@ function HeaderItem(props) {
     return (
         <div className="main-header__content-list__item">
             <p className="main-header__content-list__item__title">{dayNameByDate(props.data.date)}</p>
-            <img src={props.data.day.condition.icon} />
+            <img src={props.data.day.condition.icon} alt={props.data.day.condition.text} />
             <div>
                 <span>{maxTemp}°</span> 
                 <span className="text--secondary">{minTemp}°</span>

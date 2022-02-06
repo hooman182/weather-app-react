@@ -8,7 +8,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(async () => {
-    // dispatch(fetchData())
+    dispatch(fetchData())
   }, [])
   return (
     <>

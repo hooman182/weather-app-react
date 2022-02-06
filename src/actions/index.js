@@ -1,7 +1,9 @@
 import { weatherApi, ipApi } from "../services/index"
 
 const fetchData = () => async dispatch => {
-    const data = await weatherApi("London")
+    const { city } = await ipApi()
+    console.log(city);
+    const data = await weatherApi(city)
     dispatch({
         type: "FETCH_DATA",
         payload: data
