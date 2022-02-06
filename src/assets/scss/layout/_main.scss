@@ -2,67 +2,94 @@
 @use "../utils/variables";
 
 .main {
-    @include mixins.grid(1fr, 1fr 2fr);
+    /* main styles */
+    @include mixins.grid(100%, 1fr 2fr);
     padding: 1em;
-    overflow-y: scroll;
-    #{&}-header__nav {
-        @include mixins.flex(row, space-between, center);
-    }
-    #{&}-header__lists {
-        @include mixins.flex(row, space-between, center);
-        & li {
-            cursor: pointer;
+    overflow: auto;
+
+    /* main-header styles */
+    #{&}-header {
+        &__nav {
+            @include mixins.flex(row, space-between, center);
+        }
+        &__lists {
+            @include mixins.flex(row, space-between, center);
+            & li {
+                cursor: pointer;
+            }
+        }
+        &__content {
+            padding: 1em 0.75em;
+        }
+        &__content-list {
+            user-select: none;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow: auto;
+            cursor: grab;
+            &:active {
+                cursor: grabbing;
+            }
+            &__item {
+                @include mixins.flex(column, space-between, center);
+                flex-basis: 15%;
+                flex-shrink: 0;
+                background: variables.$white;
+                margin: 0.25em;
+                padding: 0.5em;
+                border-radius: 10px;
+                text-transform: capitalize;
+                font-weight: 600;
+                &__title {
+                    margin-bottom: 0.25em;
+                }
+                span:nth-of-type(2) {
+                    margin-left: 0.5em;
+                }
+            }
+            &::-webkit-scrollbar {
+                display: none;
+            }
         }
     }
-    #{&}-header__content {
-        padding: 1em 0.75em;
-    }
-    #{&}-header__content-list {
-        @include mixins.grid(repeat(7, 1fr), 1fr);
-        &__item {
-            @include mixins.flex(column, space-between, center);
-            flex-grow: 1;
-            background: variables.$white;
-            margin: 0.25em;
-            padding: 0.5em;
-            border-radius: 10px;
-            text-transform: capitalize;
-        }
-    }
+
+    /* main-body styles */
     #{&}-body__content {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 0.5em 0;
-        &-item {
+        flex-grow: 2;
+        @include mixins.grid(repeat(4, 1fr), repeat(auto-fill, 1fr));
+        padding: 0.75em 0;
+        &__item {
+            flex-basis: 20%;
+            flex-shrink: 0;
             background: variables.$white;
             border-radius: 15px;
             margin: 0.5em;
-            padding: 0.75em;
-            & > * {
-                margin: 0.5em;
-            }
+            padding: 1em;
             &__title {
                 color: darken($color: variables.$light, $amount: 20);
+                font-weight: 600;
             }
-            &__text {
-                font-size: 1.2rem;
-            }
-            &__text--big {
-                font-size: 2rem;
+            &__body {
+                @include mixins.flex(row, space-between, baseline);
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin-top: 1em;
+                sub {
+                    font-size: 1rem;
+                }
+                i {
+                    color: darken($color: variables.$secondary, $amount: 25);
+                }
             }
         }
     }
-}
 
-@media screen and (max-width: 620px) {
-    .main {
+    /* Mobile screen styles */
+    @include mixins.mobile-screen {
         overflow: initial;
-        #{&}-header__content-list {
-            @include mixins.grid(repeat(auto-fill, minmax(100px, auto)), repeat(auto-fill, 1fr));
-        }
+        min-height: 10px;
         #{&}-body__content {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(auto-fill, 1fr);
+            @include mixins.grid(repeat(2, 1fr), repeat(auto-fill, 1fr));
         }
     }
 }

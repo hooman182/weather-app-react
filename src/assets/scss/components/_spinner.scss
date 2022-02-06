@@ -1,0 +1,26 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+.spinner {
+    margin: 1em;
+    padding: 1em 1.5em;
+    border-radius: 10px;
+    background: variables.$white;
+    @include mixins.flex(column, center, center);
+    #{&}__item {
+        width: 60px;
+        height: 60px;
+        border-radius: 10em;
+        border: 3px solid variables.$secondary;
+        border-top: 2px solid black;
+        animation: spinner 0.5s cubic-bezier(0.48, 0.755, 0.11, 0.65) 0s infinite;
+    }
+    #{&}__text {
+        margin: 0.5em;
+        font-weight: 600;
+    }
+}
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

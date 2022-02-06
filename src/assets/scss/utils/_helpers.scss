@@ -1,19 +1,16 @@
 @use "./variables";
 
-.item-border {
+.item--border {
     border-bottom: 2px solid black;
 }
-.item-rounded {
+.item--rounded {
     border-radius: 8px;
     background: black;
     color: variables.$white;
     padding: 0.25em 0.3em;
 }
-.text-secondary {
-    color: variables.$secondary;
-}
-.text-secondary {
-    color: variables.$secondary;
+.text--secondary {
+    color: darken($color: variables.$secondary, $amount: 20);
 }
 .title--medium {
     font-size: 1rem;

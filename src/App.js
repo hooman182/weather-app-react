@@ -1,18 +1,14 @@
 import SideBar from "./components/sidebar/TheSideBar"
 import MainContent from "./components/main/MainContent"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { fetchData } from "./actions"
+
 function App() {
-  // const [location, setLocation] = useState({})
-  // const [weather, setWeather] = useState({})
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-
-    // axios.get("https://api.weatherapi.com/v1/current.json?key=1db779ded4e849c989a175725221301&q=tehran&aqi=yes")
-    //   .then(res => {
-    //     setLocation(res.data.location)
-    //     setWeather(res.data.current)
-    //   })
-    //   .catch(err => console.log(err))
+  useEffect(async () => {
+    // dispatch(fetchData())
   }, [])
   return (
     <>

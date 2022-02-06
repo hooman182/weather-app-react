@@ -5,22 +5,13 @@
     @include mixins.grid(1fr, 1fr 2fr 1fr);
     padding: 1em;
     background: variables.$white;
-    #{&}-form {
-        @include mixins.flex(row, none, baseline);
-        font-size: 1.1rem;
-        padding: 0.5em;
-    }
-    #{&}-form__input {
-        flex-grow: 1;
-        margin: 0 0.5em;
-        padding: 0.25em;
-        &::placeholder {
-            font-weight: 600;
-        }
-    }
     #{&}-body {
         @include mixins.grid(auto, repeat(3, auto));
         align-items: start;
+        div {
+            @include mixins.grid(auto auto, 1fr);
+            align-items: center;
+        }
         &__icon {
             justify-self: center;
             transform: scale(1.1);
@@ -42,40 +33,29 @@
         align-self: end;
         text-transform: capitalize;
         text-align: center;
-        background: darken($color: variables.$light, $amount: 25);
-        padding: 1.5em 2em;
+        background: darken($color: variables.$secondary, $amount: 10);
+        padding: 1.5em;
         border-radius: 0.5em;
-        color: variables.$white;
+        color: darken($color: variables.$white, $amount: 100);
         font-size: 1.2rem;
         font-weight: 700;
     }
-}
 
-@media screen and (max-width: 620px) {
-    .sidebar {
+    @include mixins.mobile-screen {
         @include mixins.grid(1fr, auto auto);
+        height: 90vh;
         #{&}-body {
             @include mixins.grid(1fr, 1fr 0.5fr 0.5fr);
-            // &__icon {
-            //     justify-self: center;
-            //     transform: scale(1.1);
-            // }
-            // &__title {
-            //     font-size: 4rem;
-            //     text-transform: capitalize;
-            // }
+            div img {
+                justify-self: end;
+                margin-right: 0.75em;
+            }
             &__text {
-                // font-weight: 600;
-                // font-size: 1.3rem;
-                // text-transform: capitalize;
-                // &:nth-of-type(1) {
-                //     align-self: center;
-                // }
-                // margin: 0.5em;
                 justify-self: center;
-                // &:nth-of-type(1) {
-                //     font-size: 1.5rem;
-                // }
+                align-self: center;
+                &:nth-of-type(1) {
+                    align-self: end;
+                }
             }
         }
     }
