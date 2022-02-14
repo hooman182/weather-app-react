@@ -2,7 +2,6 @@ import { weatherApi, ipApi } from "../services/index"
 
 const fetchData = () => async dispatch => {
     const { city } = await ipApi()
-    console.log(city);
     const data = await weatherApi(city)
     dispatch({
         type: "FETCH_DATA",

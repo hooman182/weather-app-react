@@ -8,7 +8,7 @@ function SidebarBody(props) {
         <>
             <div className="sidebar-body">
                 <div>
-                    <img src={props.data.condition.icon} className="sidebar-body__icon" />
+                    <img src={props.data.condition.icon} alt={props.data.condition.text} className="sidebar-body__icon" />
                     <p className="sidebar-body__title"><span>{getTemp}</span><sup>°{temp}</sup></p>
                 </div>
                 <p className="sidebar-body__text">{props.data.condition.text}</p>
