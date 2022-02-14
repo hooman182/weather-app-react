@@ -1,5 +1,4 @@
 import { useState } from "react";
-import WeekItem from "./WeekItem";
 import ListContainer from "./ListContainer";
 import MainHeaderNavbar from "./MainHeaderNavbar";
 
